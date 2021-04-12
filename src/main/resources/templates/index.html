@@ -1,0 +1,391 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+    <title>Gym trainer | Template </title>
+</head>
+<body class="black-bg" style="overflow: visible;">
+<!-- ? Preloader Start -->
+<div id="preloader-active" style="display: none;">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="../static/img/logo/loder.png" th:src="@{/img/logo/loder.png}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader Start -->
+<header th:replace="layout/layout::header">
+</header>
+<main>
+    <!--? slider Area Start-->
+    <div class="slider-area position-relative">
+        <div class="slider-active slick-initialized slick-slider">
+            <!-- Single Slider -->
+            <div class="slick-list draggable">
+                <div class="slick-track" style="opacity: 1; width: 1349px;">
+                    <div class="single-slider slider-height d-flex align-items-center slick-slide slick-current slick-active"
+                         data-slick-index="0" aria-hidden="false" tabindex="0"
+                         style="width: 1349px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-9 col-md-10">
+                                    <div class="hero__caption">
+                                        <span data-animation="fadeInLeft" data-delay="0.1s" class=""
+                                              style="animation-delay: 0.1s;">Hi This is anh nguyen</span>
+                                        <h1 data-animation="fadeInLeft" data-delay="0.4s" class=""
+                                            style="animation-delay: 0.4s;">Gym Trainer</h1>
+                                        <a href="courses.html" class="border-btn hero-btn" data-animation="fadeInLeft"
+                                           data-delay="0.8s" tabindex="0" style="animation-delay: 0.8s;">thông tin</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!-- Traning categories Start -->
+    <section class="traning-categories black-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="single-topic text-center mb-30">
+                        <div class="topic-img">
+                            <img src="../static/img/gallery/cat1.png" th:src="@{/img/gallery/cat1.png}" alt="">
+                            <div class="topic-content-box">
+                                <div class="topic-content">
+                                    <h3>Personal traning</h3>
+                                    <p>Chương trình dạy 1:1 mang đến hiệu quả cao và sự chủ động thời gian<br>Chương
+                                        trình đặc biệt</p>
+                                    <a href="courses.html" class="border-btn">thông tin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="single-topic text-center mb-30">
+                        <div class="topic-img">
+                            <img src="../static/img/gallery/cat2.png" th:src="@{/img/gallery/cat2.png}" alt="">
+                            <div class="topic-content-box">
+                                <div class="topic-content">
+                                    <h3>Group traning</h3>
+                                    <p>Chương trình dậy kèm theo nhóm giúp tiết kiệm chi phí, lớp hoc vui vẻ!<br>Chương
+                                        trình cơ bản</p>
+                                    <a href="courses.html" class="btn">thông tin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Traning categories End-->
+    <!--? Team -->
+    <section class="team-area fix">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-tittle text-center mb-55 wow fadeInUp" data-wow-duration="1s"
+                         data-wow-delay=".1s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <h2>Dịch vụ</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="cat-icon">
+                            <img src="../static/img/gallery/team1.png" th:src="@{/img/gallery/team1.png}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Body Building</a></h5>
+                            <p>Xây dựng cơ thể chuẩn khoa học về tập luyện và dinh dưỡng!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        <div class="cat-icon">
+                            <img src="../static/img/gallery/team2.png" th:src="@{/img/gallery/team2.png}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Muscle Gain</a></h5>
+                            <p>Tăng cân hiệu quả " tăng cơ không tăng mỡ "!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <div class="cat-icon">
+                            <img src="../static/img/gallery/team3.png" th:src="@{/img/gallery/team3.png}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Weight Loss</a></h5>
+                            <p>Giảm mỡ, giảm cân đảm bảo sức khỏe nói không với thuốc và mất nước!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
+    <!--? Gallery Area Start -->
+    <div class="gallery-area section-padding30 ">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-tittle text-center mb-55 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s"
+                     style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <h2>personal trainer</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row">
+
+
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img"
+                             style="background-image: url(/img/gallery/gallery4.png);"></div>
+                        <div class="overlay" style="top: 0px; left: 285px; width: 285px; height: 500px;">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img"
+                             style="background-image: url(/img/gallery/gallery5.png);"></div>
+                        <div class="overlay" style="top: 500px; left: 0px; width: 285px; height: 500px;">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img"
+                             style="background-image: url(/img/gallery/gallery6.png);"></div>
+                        <div class="overlay" style="top: 0px; left: 0px; width: 600px; height: 500px;">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Area End -->
+    <!-- Courses area start -->
+    <section class="pricing-area section-padding40 fix">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-tittle text-center mb-55 wow fadeInUp" data-wow-duration="2s"
+                         data-wow-delay=".1s"
+                         style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <h2>thẻ hội viên</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="properties__card">
+                            <div class="about-icon">
+                                <img src="../static/img/icon/price.svg" th:src="@{/img/icon/price.svg}" alt="">
+                            </div>
+                            <div class="properties__caption">
+                                <span class="month">6 tháng</span>
+                                <p class="mb-25">$30/m <span>(Single class)</span></p>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Nước uống miễn phí</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>xông hơi hàn quốc</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>trainer đạt chứng chỉ quốc tế</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Tư vấn dinh dưỡng</p>
+                                    </div>
+                                </div>
+                                <div class="single-features mb-20">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>giãn cơ sau tập</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="border-btn border-btn2">tham gia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="properties__card">
+                            <div class="about-icon">
+                                <img src="../static/img/icon/price.svg" th:src="@{/img/icon/price.svg}" alt="">
+                            </div>
+                            <div class="properties__caption">
+                                <span class="month">3 tháng</span>
+                                <p class="mb-25">$20/m <span>(Single class)</span></p>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Nước uống miễn phí</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>xông hơi hàn quốc</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>trainer đạt chứng chỉ quốc tế</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Tư vấn dinh dưỡng</p>
+                                    </div>
+                                </div>
+                                <div class="single-features mb-20">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>giãn cơ sau tập</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="border-btn border-btn2">tham gia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="properties__card">
+                            <div class="about-icon">
+                                <img src="../static/img/icon/price.svg" th:src="@{/img/icon/price.svg}" alt="">
+                            </div>
+                            <div class="properties__caption">
+                                <span class="month">1 tháng</span>
+                                <p class="mb-25">$8/m <span>(Single class)</span></p>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Nước uống miễn phí</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>xông hơi hàn quốc</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>trainer đạt chứng chỉ quốc tế</p>
+                                    </div>
+                                </div>
+                                <div class="single-features">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>Tư vấn dinh dưỡng</p>
+                                    </div>
+                                </div>
+                                <div class="single-features mb-20">
+                                    <div class="features-icon">
+                                        <img src="../static/img/icon/check.svg" th:src="@{/img/icon/check.svg}" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <p>giãn cơ sau tập</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="border-btn border-btn2">tham gia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Courses area End -->
+</main>
+<footer th:replace="layout/layout::footer"></footer>
+
+<!-- Scroll Up -->
+<div id="back-top" style="display: none;">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+
+<div th:replace="layout/layout::js"></div>
+
+</body>
+</html>
