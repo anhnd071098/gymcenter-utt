@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="user/layout/layout :: head">
+    <title>Gym trainer | Template </title>
+</head>
+<body class="black-bg" style="overflow: visible;">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active" style="display: none;">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img th:src="@{img/logo/loder.png}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header th:replace="user/layout/layout::header">
+    </header>
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-70">
+                            <h2>trainer</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Gallery Area Start -->
+    <div class="gallery-area section-padding30 ">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-tittle text-center mb-55 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <h2>personal trainer</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" th:style="'background-image: url('+ @{img/gallery/gallery6.png} +');'"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Tên huấn luyện viên</h3>
+                                <h5>tuổi</h5>
+                                <h5>kinh nghiệm</h5>
+                                <h5>thành tích</h5>
+                            </div>
+                            <div class="overlay-content1">
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" th:style="'background-image: url('+ @{img/gallery/gallery4.png} +');'"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Tên huấn luyện viên</h3>
+                                <h5>tuổi</h5>
+                                <h5>kinh nghiệm</h5>
+                                <h5>thành tích</h5>
+                            </div>
+                            <div class="overlay-content1">
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" th:style="'background-image: url('+ @{img/gallery/gallery5.png} +');'"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Tên huấn luyện viên</h3>
+                                <h5>tuổi</h5>
+                                <h5>kinh nghiệm</h5>
+                                <h5>thành tích</h5>
+                            </div>
+                            <div class="overlay-content1">
+                                <a href="gallery.html"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Area End -->
+
+
+</main>
+    <footer th:replace="user/layout/layout::footer"></footer>
+  <!-- Scroll Up -->
+  <div id="back-top" style="display: block;">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+
+    <div th:replace="user/layout/layout::js"></div>
+
+</body>
+</html>

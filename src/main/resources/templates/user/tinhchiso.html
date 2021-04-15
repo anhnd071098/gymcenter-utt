@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="user/layout/layout :: head">
+    <title>Gym trainer | Template </title>
+</head>
+<body class="black-bg" style="overflow: visible;">
+    <div class="header-area header-transparent">
+        <div class="main-header header-sticky">
+            <div class="container-fluid">
+                <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html"><img style="height: 68px; width: 146px;" th:src="@{img/logo/logo.png}" alt=""></a>
+                    </div>
+                    <!-- Main-menu -->
+                    <div class="main-menu f-right d-none d-lg-block">
+                        <nav>
+                            <ul id="navigation">
+                                <li><a href="index.html">trang chủ</a></li>
+                                <li><a href="about.html">giới thiệu</a></li>
+                                <li><a href="tinhchiso.html">tính chỉ số</a></li>
+                                <li><a href="hoivien.html">hội viên</a></li>
+                                <li><a href="gallery.html">trainer</a></li>
+                                <li><a href="blog.html">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html">liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>          
+                    <!-- Header-btn -->
+                    <div class="header-btns d-none d-lg-block f-right">
+                       <a href="contact.html" class="btn">đăng nhập</a>
+                   </div>
+                   <!-- Mobile Menu -->
+                   <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">trang chủ</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">giới thiệu</a></li>
+                                <li><a href="tinhchiso.html" role="menuitem" tabindex="-1">tính chỉ số</a></li>
+                                <li><a href="hoivien.html" role="menuitem" tabindex="-1">hội viên</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">trainer</a></li>
+                                <li><a href="blog.html" role="menuitem" tabindex="-1">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">liên hệ</a></li>
+                            </ul></div><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">trang chủ</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">giới thiệu</a></li>
+                                <li><a href="courses.html" role="menuitem" tabindex="-1">tính chỉ số</a></li>
+                                <li><a href="hoivien.html" role="menuitem" tabindex="-1">hội viên</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">trainer</a></li>
+                                <li><a href="blog.html" role="menuitem" tabindex="-1">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">liên hệ</a></li>
+                            </ul></div><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">trang chủ</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">giới thiệu</a></li>
+                                <li><a href="courses.html" role="menuitem" tabindex="-1">tính chỉ số</a></li>
+                                <li><a href="hoivien.html" role="menuitem" tabindex="-1">hội viên</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">trainer</a></li>
+                                <li><a href="blog.html" role="menuitem" tabindex="-1">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">liên hệ</a></li>
+                            </ul></div><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">trang chủ</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">giới thiệu</a></li>
+                                <li><a href="courses.html" role="menuitem" tabindex="-1">tính chỉ số</a></li>
+                                <li><a href="hoivien.html" role="menuitem" tabindex="-1">hội viên</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">trainner</a></li>
+                                <li><a href="blog.html" role="menuitem" tabindex="-1">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">liên hệ</a></li>
+                            </ul></div><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">trang chủ</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">giới thiệu</a></li>
+                                <li><a href="courses.html" role="menuitem" tabindex="-1">tính chỉ số</a></li>
+                                <li><a href="v.html" role="menuitem" tabindex="-1">hội viên</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">trainner</a></li>
+                                <li><a href="blog.html" role="menuitem" tabindex="-1">bài viết</a>
+                                    
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">liên hệ</a></li>
+                            </ul></div><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                                <li><a href="index.html" role="menuitem" tabindex="-1">Home</a></li>
+                                <li><a href="about.html" role="menuitem" tabindex="-1">About</a></li>
+                                <li><a href="courses.html" role="menuitem" tabindex="-1">Courses</a></li>
+                                <li><a href="hoivien.html" role="menuitem" tabindex="-1">Pricing</a></li>
+                                <li><a href="gallery.html" role="menuitem" tabindex="-1">Gallery</a></li>
+                                <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"></a><a href="blog.html" tabindex="-1">Blog</a>
+                                    <span class="slicknav_arrow">+</span><ul class="submenu slicknav_hidden" role="menu" aria-hidden="true" style="display: none;">
+                                        <li><a href="blog.html" role="menuitem" tabindex="-1">Blog</a></li>
+                                        <li><a href="blog_details.html" role="menuitem" tabindex="-1">Blog Details</a></li>
+                                        <li><a href="elements.html" role="menuitem" tabindex="-1">Elements</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html" role="menuitem" tabindex="-1">Contact</a></li>
+                            </ul></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- ? Preloader Start -->
+    <header th:replace="user/layout/layout::header">
+    </header>
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-70">
+                            <h2>Chỉ số năng lượng</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+</main>
+    <footer th:replace="user/layout/layout::footer"></footer>
+  <!-- Scroll Up -->
+  <div id="back-top" style="display: none;">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+    <div th:replace="user/layout/layout::js"></div>
+</body>
+</html>
