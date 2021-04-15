@@ -4,20 +4,20 @@
     <title>Gym trainer | Template </title>
 </head>
 <body class="black-bg" style="overflow: visible;">
-    <!-- ? Preloader Start -->
-    <div id="preloader-active" style="display: none;">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img th:src="@{img/logo/loder.png}" alt="">
-                </div>
+<!-- ? Preloader Start -->
+<div id="preloader-active" style="display: none;">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img th:src="@{img/logo/loder.png}" alt="">
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
-    <header th:replace="user/layout/layout::header">
-    </header>
+</div>
+<!-- Preloader Start -->
+<header th:replace="user/layout/layout::header">
+</header>
 <main>
     <!--? Hero Start -->
     <div class="slider-area2">
@@ -46,14 +46,15 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <div class="properties__card">
                             <div class="about-icon">
                                 <img th:src="@{img/icon/price.svg}" alt="">
                             </div>
                             <div class="properties__caption">
                                 <span class="month">6 tháng</span>
-                                <p class="mb-25">$30/m  <span>(Single class)</span></p>
+                                <p class="mb-25">$30/m <span>(Single class)</span></p>
                                 <div class="single-features">
                                     <div class="features-icon">
                                         <img th:src="@{img/icon/check.svg}" alt="">
@@ -100,14 +101,15 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <div class="properties__card">
                             <div class="about-icon">
                                 <img th:src="@{img/icon/price.svg}" alt="">
                             </div>
                             <div class="properties__caption">
                                 <span class="month">3 tháng</span>
-                                <p class="mb-25">$20/m  <span>(Single class)</span></p>
+                                <p class="mb-25">$20/m <span>(Single class)</span></p>
                                 <div class="single-features">
                                     <div class="features-icon">
                                         <img th:src="@{img/icon/check.svg}" alt="">
@@ -154,14 +156,15 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"
+                         style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <div class="properties__card">
                             <div class="about-icon">
                                 <img th:src="@{img/icon/price.svg}" alt="">
                             </div>
                             <div class="properties__caption">
                                 <span class="month">1 tháng</span>
-                                <p class="mb-25">$8/m  <span>(Single class)</span></p>
+                                <p class="mb-25">$8/m <span>(Single class)</span></p>
                                 <div class="single-features">
                                     <div class="features-icon">
                                         <img th:src="@{img/icon/check.svg}" alt="">
@@ -212,15 +215,15 @@
     </section>
     <!-- Courses area End -->
 </main>
-    <footer th:replace="user/layout/layout::footer"></footer>
-  <!-- Scroll Up -->
-  <div id="back-top" style="display: none;">
+<footer th:replace="user/layout/layout::footer"></footer>
+<!-- Scroll Up -->
+<div id="back-top" style="display: none;">
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
 
 <!-- JS here -->
 
-    <div th:replace="user/layout/layout::js"></div>
+<div th:replace="user/layout/layout::js"></div>
 </body>
-   
+
 </html>
