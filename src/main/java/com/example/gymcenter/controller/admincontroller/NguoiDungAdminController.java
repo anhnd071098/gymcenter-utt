@@ -5,11 +5,7 @@ import com.example.gymcenter.services.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -23,22 +19,25 @@ public class NguoiDungAdminController {
     @GetMapping("/themND")
     public String add(Model model) {
         model.addAttribute("taikhoan",new TaiKhoan());
-        return "admin/them-nguoi-dung";
+        return "/admin/them-nguoi-dung";
     }
 
     @GetMapping("/xemND")
-    public String view() {
+    public String view(Model model) {
+        model.addAttribute("taiKhoan",taiKhoanService.getList());
         return "admin/xem-nguoi-dung";
     }
 
-    @GetMapping("/suaND")
-    public String update() {
+    @GetMapping("/suaND/{id}/edit")
+    public String update(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("taiKhoan1",taiKhoanService.findOne(id));
         return "admin/sua-nguoi-dung";
     }
 
-    @GetMapping("/xoaND")
-    public String delete() {
-        return "";
+    @GetMapping("/xoaND/{id}/delete")
+    public String delete(@PathVariable("id") Integer id) {
+        taiKhoanService.delete(id);
+        return "redirect:/admin/xemND";
     }
 
     @PostMapping("/nguoidung/save")

@@ -20,48 +20,48 @@
             <!-- start: page -->
             <div class="panel-body">
                 <label style="font-size: 30px; margin-bottom: 10px;">Sửa Người Dùng</label>
-                <form class="form-horizontal form-bordered" method="get">
+                <form th:action="@{/admin/nguoidung/save}" th:object="${taiKhoan1}" class="form-horizontal form-bordered" method="post">
                     <div class="form-group">
                         <div class="col-md-6">
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control">
+                                <input th:field="*{tenNguoiDung}" type="text" class="form-control" >
+                            </div>
+
+                            <div  class="input-group mb-md">
+														<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+														</span>
+                                <input th:field="*{tuoi}" type="text" class="form-control">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control">
+                                <input th:field="*{diaChi}" type="text" class="form-control">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control">
-                            </div>
-
-                            <div class="input-group mb-md">
-														<span class="input-group-addon">
-															<i class="fa fa-user"></i>
-														</span>
-                                <input type="text" class="form-control">
+                                <input th:field="*{soDienThoai}" type="text" class="form-control">
                             </div>
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-envelope"></i>
 														</span>
-                                <input type="text" class="form-control">
+                                <input th:field="*{email}" type="text" class="form-control">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control">
+                                <input th:field="*{matKhau}" type="text" class="form-control">
                             </div>
 
                             <div class="input-group mb-md">
