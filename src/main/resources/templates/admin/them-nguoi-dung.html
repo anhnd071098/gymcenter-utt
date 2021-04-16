@@ -20,49 +20,49 @@
             <!-- start: page -->
             <div class="panel-body">
                 <label style="font-size: 30px; margin-bottom: 10px;">Thêm Người Dùng</label>
-                <form class="form-horizontal form-bordered" method="get">
+                <form class="form-horizontal form-bordered" method="post" th:action="@{/admin/nguoidung/save}" th:object="${taikhoan}">
                     <div class="form-group">
                         <div class="col-md-6">
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập tên">
+                                <input type="text" class="form-control" th:field="*{tenNguoiDung}" placeholder="Nhập tên">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập Tuổi">
+                                <input type="text" class="form-control" th:field="*{tuoi}" placeholder="Nhập Tuổi">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập địa chỉ">
+                                <input type="text" class="form-control" th:field="*{diaChi}" placeholder="Nhập địa chỉ">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập số điện thoại">
+                                <input type="text" class="form-control" th:field="*{soDienThoai}" placeholder="Nhập số điện thoại">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-envelope"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập Email">
+                                <input type="text" class="form-control" th:field="*{email}" placeholder="Nhập Email">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                                <input type="password" class="form-control" th:field="*{matKhau}" placeholder="Nhập mật khẩu">
                             </div>
                             <div class="input-group mb-md">
                                 <input type="submit" value="Lưu">

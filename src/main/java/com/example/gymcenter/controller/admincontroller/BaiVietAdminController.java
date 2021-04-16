@@ -23,7 +23,7 @@ public class BaiVietAdminController {
     }
 
     @GetMapping("/xoaBV")
-    public String delete() {
-        return "";
+    public void delete() {
+
     }
 }

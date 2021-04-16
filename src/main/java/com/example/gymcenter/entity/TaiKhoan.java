@@ -1,6 +1,7 @@
 package com.example.gymcenter.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Date;
 
 @Entity
@@ -22,7 +23,7 @@ public class TaiKhoan {
 
     @Column(name = "soDienThoai")
     private String soDienThoai;
-
+    @Email
     @Column(name = "email")
     private String email;
 
