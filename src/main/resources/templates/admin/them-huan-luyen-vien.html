@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="fixed" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layoutadmin/layoutadmin :: head"></head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header th:replace="admin/layoutadmin/layoutadmin :: header" class="header"></header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        <aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-left" id="sidebar-left"
+               class="sidebar-left"></aside>
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header th:replace="admin/layoutadmin/layoutadmin :: page-header" class="page-header">
+            </header>
+            <!-- start: page -->
+            <div class="panel-body">
+                <label style="font-size: 30px; margin-bottom: 10px;">Thêm Huấn Luyện Viên</label>
+                <form class="form-horizontal form-bordered" method="get">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <div class="input-group mb-md">
+														<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+														</span>
+                                <input type="text" class="form-control" placeholder="Nhập tên">
+                            </div>
+
+                            <div class="input-group mb-md">
+														<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+														</span>
+                                <input type="text" class="form-control" placeholder="Nhập Tuổi">
+                            </div>
+
+                            <div class="input-group mb-md">
+														<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+														</span>
+                                <input type="text" class="form-control" placeholder="Nhập thành tích">
+                            </div>
+
+                            <div class="input-group mb-md">
+														<span class="input-group-addon">
+															<i class="fa fa-user"></i>
+														</span>
+                                <input type="text" class="form-control" placeholder="Kinh ngiệm">
+                            </div>
+                            <div class="input-group mb-md">
+                                <input type="submit" value="Lưu">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-right" id="sidebar-right" class="sidebar-right">
+    </aside>
+</section>
+
+<div th:replace="admin/layoutadmin/layoutadmin :: js"></div>
+
+</div>
+</body>
+</html>

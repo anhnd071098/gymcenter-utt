@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="fixed" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layoutadmin/layoutadmin :: head"></head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header th:replace="admin/layoutadmin/layoutadmin :: header" class="header"></header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        <aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-left" id="sidebar-left"
+               class="sidebar-left"></aside>
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header th:replace="admin/layoutadmin/layoutadmin :: page-header" class="page-header">
+            </header>
+            <!-- start: page -->
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="fa fa-caret-down"></a>
+                        <a href="#" class="fa fa-times"></a>
+                    </div>
+
+                    <h2 class="panel-title">Xem Người Dùng</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-md">
+                                <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="datatable-editable_wrapper" class="dataTables_wrapper no-footer">
+                        <div class="row datatables-header form-inline">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_length" id="datatable-editable_length"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="datatable-editable_filter" class="dataTables_filter"><label><input
+                                        type="search" class="form-control" placeholder="Search"
+                                        aria-controls="datatable-editable"></label></div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped mb-none dataTable no-footer"
+                                   id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                                <thead>
+                                <tr role="row">
+                                    <th style="width: 30px;">ID</th>
+                                    <th style="width: 150px;">Tên Người dùng</th>
+                                    <th style="width: 30px;">Tuổi</th>
+                                    <th style="width: 150px;">Địa Chỉ</th>
+                                    <th style="width: 60px;">số điện thoại</th>
+                                    <th style="width: 30px;">TT Thuê</th>
+                                    <th style="width: 30px;">Thanh Toán</th>
+
+                                    <th aria-label="Actions" style="width: 98px;">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="gradeA odd" role="row">
+                                    <td style="width: 30px;">1</td>
+                                    <td style="width: 150px;">Nguyễn Anh</td>
+                                    <td style="width: 30px;">23</td>
+                                    <td style="width: 150px;">Hà Nội</td>
+                                    <td style="width: 60px;">0325433399</td>
+                                    <td style="width: 30px;">1</td>
+                                    <td style="width: 30px;">1</td>
+                                    <td class="actions">
+                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr class="gradeA odd" role="row">
+                                    <td style="width: 30px;">2</td>
+                                    <td style="width: 150px;">Nguyễn Hải</td>
+                                    <td style="width: 30px;">25</td>
+                                    <td style="width: 150px;">Hà Nội</td>
+                                    <td style="width: 60px;">123</td>
+                                    <td style="width: 30px;">0</td>
+                                    <td style="width: 30px;">0</td>
+                                    <td class="actions">
+                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row datatables-footer">
+                            <div class="col-sm-12 col-md-6"></div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_paginate paging_bs_normal" id="datatable-editable_paginate">
+                                    <ul class="pagination">
+                                        <li class="prev disabled"><a href="#"><span
+                                                class="fa fa-chevron-left"></span></a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li class="next"><a href="#"><span class="fa fa-chevron-right"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-right" id="sidebar-right" class="sidebar-right">
+    </aside>
+</section>
+
+<div th:replace="admin/layoutadmin/layoutadmin :: js"></div>
+
+</div>
+</body>
+</html>
