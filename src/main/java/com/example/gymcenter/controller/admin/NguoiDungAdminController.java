@@ -5,10 +5,8 @@ import com.example.gymcenter.services.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -26,22 +24,35 @@ public class NguoiDungAdminController {
     }
 
     @GetMapping("/xemND")
-    public String view() {
+    public String view(Model model) {
+        model.addAttribute("taiKhoan",taiKhoanService.getList());
         return "admin/xem-nguoi-dung";
     }
 
-    @GetMapping("/suaND")
-    public String update() {
+    @GetMapping("/suaND/{id}/edit")
+    public String update(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("taiKhoan1",taiKhoanService.findOne(id));
         return "admin/sua-nguoi-dung";
     }
 
-    @GetMapping("/xoaND")
-    public String delete() {
-        return "";
+    @GetMapping("/xoaND/{id}/delete")
+    public String delete(@PathVariable("id") Integer id) {
+        taiKhoanService.delete(id);
+        return "redirect:/admin/xemND";
     }
 
     @PostMapping("/nguoidung/save")
     public String saveUser(@Valid @ModelAttribute("taikhoan") TaiKhoan taiKhoan) {
         return taiKhoanService.save(taiKhoan);
+    }
+
+    @GetMapping("/nguoidung/timkiem")
+    public String search(@RequestParam("term") String term , Model model){
+        if (StringUtils.isEmpty(term)) {
+            return "redirect:/xemND";
+        }
+        else
+            model.addAttribute("taiKhoan",taiKhoanService.search(term));
+        return "admin/xemND";
     }
 }
