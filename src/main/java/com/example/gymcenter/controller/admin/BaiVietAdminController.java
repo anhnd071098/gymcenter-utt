@@ -1,6 +1,5 @@
 package com.example.gymcenter.controller.admin;
 
-import com.example.gymcenter.entity.BaiViet;
 import com.example.gymcenter.request.BaiVietRequest;
 import com.example.gymcenter.services.BaiVietService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
-import java.util.List;
 
 @Controller
 @RequestMapping(value = "/admin")

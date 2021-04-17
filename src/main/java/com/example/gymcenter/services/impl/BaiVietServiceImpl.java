@@ -35,7 +35,6 @@ public class BaiVietServiceImpl implements BaiVietService {
             return "redirect:/admin/xemBV";
         }
         return "redirect:/error/404";
-
     }
 
     @Override
