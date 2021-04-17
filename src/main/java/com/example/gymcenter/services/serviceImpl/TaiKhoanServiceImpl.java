@@ -30,13 +30,21 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
     }
 
     @Override
-    public TaiKhoan findOne(Integer id) {
-        return taiKhoanRepository.getOne(id);
+    public  Optional<TaiKhoan>  findOne(Integer id) {
+        Optional<TaiKhoan> taiKhoan =  taiKhoanRepository.findById(id);
+        return taiKhoan;
+
     }
 
     @Override
     public void delete(Integer id) {
         taiKhoanRepository.deleteById(id);
+    }
+
+    @Override
+    public List<TaiKhoan> search(String term) {
+        List<TaiKhoan> taiKhoanList= taiKhoanRepository.findByTenNguoiDungContaining(term);
+        return taiKhoanList;
     }
 
 

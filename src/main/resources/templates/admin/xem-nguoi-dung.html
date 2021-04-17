@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                                <button id="addToTable" th:href="@{/admin/themND}" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -41,9 +41,17 @@
                                 <div class="dataTables_length" id="datatable-editable_length"></div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div id="datatable-editable_filter" class="dataTables_filter"><label><input
-                                        type="search" class="form-control" placeholder="Search"
-                                        aria-controls="datatable-editable"></label></div>
+                                <div id="datatable-editable_filter" class="dataTables_filter"><label>
+                                    <form th:action="@{/admin/nguoidung/timkiem}" method="get">
+                                        <input class="form-control mr-sm-2" type="search" name="term" placeholder="Search" />
+                                        <button class="form-control" type="submit">
+                                            <i class="fa fa-search"></i> Search
+                                        </button>
+                                    </form>
+                                    <!--<input-->
+                                        <!--type="search" th:action="/admin/tim" class="form-control" placeholder="Search"-->
+                                        <!--aria-controls="datatable-editable">-->
+                                </label></div>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -81,6 +89,7 @@
                                 </tbody>
                             </table>
                         </div>
+
                         <div class="row datatables-footer">
                             <div class="col-sm-12 col-md-6"></div>
                             <div class="col-sm-12 col-md-6">

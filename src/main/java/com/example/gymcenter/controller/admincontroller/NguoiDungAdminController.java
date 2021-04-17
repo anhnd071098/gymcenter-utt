@@ -5,6 +5,7 @@ import com.example.gymcenter.services.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -43,5 +44,15 @@ public class NguoiDungAdminController {
     @PostMapping("/nguoidung/save")
     public String saveUser(@Valid @ModelAttribute("taikhoan") TaiKhoan taiKhoan) {
         return taiKhoanService.save(taiKhoan);
+    }
+
+    @GetMapping("/nguoidung/timkiem")
+    public String search(@RequestParam("term") String term , Model model){
+        if (StringUtils.isEmpty(term)) {
+            return "redirect:/xemND";
+        }
+        else
+            model.addAttribute("taiKhoan",taiKhoanService.search(term));
+        return "admin/xemND";
     }
 }
