@@ -1,4 +1,4 @@
-package com.example.gymcenter.controller.admincontroller;
+package com.example.gymcenter.controller.admin;
 
 import com.example.gymcenter.entity.TaiKhoan;
 import com.example.gymcenter.services.TaiKhoanService;
