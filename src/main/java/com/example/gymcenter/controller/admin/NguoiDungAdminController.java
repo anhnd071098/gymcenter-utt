@@ -1,4 +1,4 @@
-package com.example.gymcenter.controller.admincontroller;
+package com.example.gymcenter.controller.admin;
 
 import com.example.gymcenter.entity.TaiKhoan;
 import com.example.gymcenter.services.TaiKhoanService;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 

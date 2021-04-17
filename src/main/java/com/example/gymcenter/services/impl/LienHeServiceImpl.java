@@ -1,4 +1,4 @@
-package com.example.gymcenter.services.serviceImpl;
+package com.example.gymcenter.services.impl;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.gymcenter.services.serviceImpl;
+package com.example.gymcenter.services.impl;
 
 import com.example.gymcenter.entity.TaiKhoan;
 import com.example.gymcenter.repository.TaiKhoanRepository;
