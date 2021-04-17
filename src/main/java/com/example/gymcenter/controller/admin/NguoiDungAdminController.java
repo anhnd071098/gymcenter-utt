@@ -20,7 +20,7 @@ public class NguoiDungAdminController {
     @GetMapping("/themND")
     public String add(Model model) {
         model.addAttribute("taikhoan",new TaiKhoan());
-        return "/admin/them-nguoi-dung";
+        return "admin/them-nguoi-dung";
     }
 
     @GetMapping("/xemND")
