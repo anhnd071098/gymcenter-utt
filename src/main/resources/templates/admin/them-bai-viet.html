@@ -20,32 +20,38 @@
             <!-- start: page -->
             <div class="panel-body">
                 <label style="font-size: 30px; margin-bottom: 10px;">Thêm Bài Viết</label>
-                <form class="form-horizontal form-bordered" method="get">
+                <form class="form-horizontal form-bordered" method="post" th:object="${baiVietRequest}" th:action="@{/admin/themBV}" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="col-md-6">
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập tên bài viết">
+                                <label>
+                                    <input th:field="*{tenBaiViet}" type="text" class="form-control" placeholder="Nhập tên bài viết">
+                                </label>
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Tóm Tắt">
+                                <label>
+                                    <input type="text" class="form-control" placeholder="Tóm Tắt" th:field="*{tomtat}">
+                                </label>
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập Nội dung bài viết">
+                                <label>
+                                    <input type="text" class="form-control" placeholder="Nhập Nội dung bài viết" th:field="*{noiDungBaiViet}"/>
+                                </label>
                             </div>
                             <div class="input-group mb-md">
                                 <label>Tải ảnh lên</label>
-                                <input type="file" id="file" name="file" multiple="">
+                                <input type="file" id="file" name="file" multiple="" th:field="*{hinhAnh}" />
                             </div>
                             <div class="input-group mb-md">
                                 <input type="submit" value="Lưu">

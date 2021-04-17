@@ -53,8 +53,9 @@
                                 <tr role="row">
                                     <th style="width: 30px;">ID</th>
                                     <th style="width: 150px;">Tên bài viết</th>
+                                    <th style="width: 150px;">Nội dung bài viết </th>
+                                    <th style="width: 150px;">Tóm tắt </th>
                                     <th style="width: 150px;">Ngày Tạo</th>
-                                    <th style="width: 150px;">Ngày Cập Nhật</th>
                                     <th style="width: 150px;">Hình Ảnh</th>
 
 
@@ -62,34 +63,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="gradeA odd" role="row">
-                                    <td style="width: 30px;">1</td>
-                                    <td style="width: 150px;">Nguyễn Anh</td>
-                                    <td style="width: 30px;">23</td>
-                                    <td style="width: 150px;">Hà Nội</td>
-
-
-                                    <td style="width: 30px;">1</td>
+                                <tr th:each="post,iterStat : ${posts} " class="gradeA odd" role="row">
+                                    <th style="width: 30px;" scope="row" th:text="${iterStat.count}"></th>
+                                    <td style="width: 150px;" th:text="${post.tenBaiViet}"></td>
+                                    <td style="width: 30px;" th:text="${post.noiDungBaiViet}"></td>
+                                    <td style="width: 150px;" th:text="${post.tomtat}"></td>
+                                    <td style="width: 150px;" th:text="${post.ngayTao}"></td>
+                                    <td style="width: 30px;"><img th:src="@{'/post/'+ ${post.hinhAnh}}" width="50px" height="50px"  alt="" src=""/></td>
                                     <td class="actions">
                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr class="gradeA odd" role="row">
-                                    <td style="width: 30px;">2</td>
-                                    <td style="width: 150px;">Nguyễn Hải</td>
-                                    <td style="width: 30px;">25</td>
-                                    <td style="width: 150px;">Hà Nội</td>
-
-
-                                    <td style="width: 30px;">0</td>
-                                    <td class="actions">
-                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                        <a th:href="@{/admin/suaBV/edit/{id}(id=${post.ID})}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                        <a th:href="@{/admin/xoaBV/delete/{id}(id=${post.ID})}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                     </td>
                                 </tr>
                                 </tbody>

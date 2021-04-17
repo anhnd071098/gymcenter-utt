@@ -1,5 +1,6 @@
 package com.example.gymcenter.config;
 
+import com.example.gymcenter.utils.Constant;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -21,5 +22,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/jsadmin/**").addResourceLocations("classpath:/static/jsadmin/");
         registry.addResourceHandler("/stylesheetsadmin/**").addResourceLocations("classpath:/static/stylesheetsadmin/");
         registry.addResourceHandler("/vendoradmin/**").addResourceLocations("classpath:/static/vendoradmin/");
+        // upload
+        registry.addResourceHandler("/post/**").addResourceLocations("file:" + Constant.POST_UPLOAD_LOCATION);
+
     }
 }
