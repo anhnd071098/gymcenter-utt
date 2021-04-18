@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface BaiVietRepository extends JpaRepository<BaiViet,Integer> {
     BaiViet findByID(Integer id);
-    List<BaiViet> findByTenBaiViet(String term);
+    List<BaiViet> findByTenBaiVietContaining(String term);
 }

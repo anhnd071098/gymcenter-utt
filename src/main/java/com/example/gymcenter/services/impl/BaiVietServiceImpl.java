@@ -68,6 +68,7 @@ public class BaiVietServiceImpl implements BaiVietService {
             baiViet.setNoiDungBaiViet(baiVietRequest.getNoiDungBaiViet());
             baiViet.setTomtat(baiVietRequest.getTomtat());
             baiViet.setHinhAnh(Utils.createImages(baiVietRequest.getHinhAnh(), "postedit", POST_UPLOAD_LOCATION));
+            baiViet.setNgayTao(new Date());
             baiVietRepository.save(baiViet);
             return "redirect:/admin/xemBV";
         }
@@ -86,10 +87,10 @@ public class BaiVietServiceImpl implements BaiVietService {
 
     @Override
     public String findBV(String term, Model model) {
-        List<BaiViet> list = baiVietRepository.findByTenBaiViet(term);
-        if (list.isEmpty()){
-            model.addAttribute("lists", list);
-            return "redirect:/admin/xemBV";
+        List<BaiViet> list = baiVietRepository.findByTenBaiVietContaining(term);
+        if (!list.isEmpty()){
+            model.addAttribute("posts", list);
+            return "admin/xem-bai-viet";
         }
         return "redirect:/error/404";
     }
