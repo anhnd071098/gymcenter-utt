@@ -20,35 +20,35 @@
             <!-- start: page -->
             <div class="panel-body">
                 <label style="font-size: 30px; margin-bottom: 10px;">Thêm Huấn Luyện Viên</label>
-                <form class="form-horizontal form-bordered" method="get">
+                <form th:action="@{/admin/huanluyenvien/save}" th:object="${hlv}" class="form-horizontal form-bordered" method="post">
                     <div class="form-group">
                         <div class="col-md-6">
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập tên">
+                                <input type="text" th:field="*{tenHuanLuyenVien}" class="form-control" placeholder="Nhập tên">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập Tuổi">
+                                <input type="text" th:field="*{tuoi}" class="form-control" placeholder="Nhập Tuổi">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Nhập thành tích">
+                                <input type="text" class="form-control" th:field="*{thanhTich}" placeholder="Nhập thành tích">
                             </div>
 
                             <div class="input-group mb-md">
 														<span class="input-group-addon">
 															<i class="fa fa-user"></i>
 														</span>
-                                <input type="text" class="form-control" placeholder="Kinh ngiệm">
+                                <input type="text" class="form-control" th:field="*{kinhNghiem}" placeholder="Kinh ngiệm">
                             </div>
                             <div class="input-group mb-md">
                                 <input type="submit" value="Lưu">

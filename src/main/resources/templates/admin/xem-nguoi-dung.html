@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <button id="addToTable" th:href="@{/admin/themND}" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                                <a th:href="@{/admin/themND}"><button id="addToTable"  class="btn btn-primary">Add <i class="fa fa-plus"></i></button></a>
                             </div>
                         </div>
                     </div>
@@ -49,12 +49,12 @@
                                         </button>
                                     </form>
                                     <!--<input-->
-                                        <!--type="search" th:action="/admin/tim" class="form-control" placeholder="Search"-->
-                                        <!--aria-controls="datatable-editable">-->
+                                    <!--type="search" th:action="/admin/tim" class="form-control" placeholder="Search"-->
+                                    <!--aria-controls="datatable-editable">-->
                                 </label></div>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive" th:unless="${#lists.isEmpty(taiKhoan)}">
                             <table class="table table-bordered table-striped mb-none dataTable no-footer"
                                    id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
                                 <thead>

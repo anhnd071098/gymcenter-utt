@@ -1,142 +1,142 @@
 <!doctype html>
 <html class="fixed" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="admin/layoutadmin/layoutadmin :: head"></head>
-	<body>
-		<section class="body">
+<body>
+<section class="body">
 
-			<!-- start: header -->
-			<header th:replace="admin/layoutadmin/layoutadmin :: header" class="header"></header>
-			<!-- end: header -->
+	<!-- start: header -->
+	<header th:replace="admin/layoutadmin/layoutadmin :: header" class="header"></header>
+	<!-- end: header -->
 
-			<div class="inner-wrapper">
-				<!-- start: sidebar -->
-				<aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-left" id="sidebar-left"
-					   class="sidebar-left"></aside>
-				<!-- end: sidebar -->
+	<div class="inner-wrapper">
+		<!-- start: sidebar -->
+		<aside th:replace="admin/layoutadmin/layoutadmin :: sidebar-left" id="sidebar-left"
+			   class="sidebar-left"></aside>
+		<!-- end: sidebar -->
 
-				<section role="main" class="content-body">
-					<header class="page-header">
-						<h2>404</h2>
-					
-						<div class="right-wrapper pull-right">
-							<ol class="breadcrumbs">
-								<li>
-									<a href="index.html">
-										<i class="fa fa-home"></i>
-									</a>
-								</li>
-								<li><span>Pages</span></li>
-								<li><span>404</span></li>
-							</ol>
-					
-							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+		<section role="main" class="content-body">
+			<header class="page-header">
+				<h2>404</h2>
+
+				<div class="right-wrapper pull-right">
+					<ol class="breadcrumbs">
+						<li>
+							<a href="index.html">
+								<i class="fa fa-home"></i>
+							</a>
+						</li>
+						<li><span>Pages</span></li>
+						<li><span>404</span></li>
+					</ol>
+
+					<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+				</div>
+			</header>
+
+			<!-- start: page -->
+			<section class="body-error error-inside">
+				<div class="center-error">
+
+					<div class="row">
+						<div class="col-md-8">
+							<div class="main-error mb-xlg">
+								<h2 class="error-code text-dark text-center text-semibold m-none">404 <i class="fa fa-file"></i></h2>
+								<p class="error-explanation text-center">Không được để trống thông tin</p>
+								<a style="text-align: center ; font-size: 30px" th:href="@{/admin/themND}">Thử lại</a>
+							</div>
 						</div>
-					</header>
-
-					<!-- start: page -->
-						<section class="body-error error-inside">
-							<div class="center-error">
-
-								<div class="row">
-									<div class="col-md-8">
-										<div class="main-error mb-xlg">
-											<h2 class="error-code text-dark text-center text-semibold m-none">404 <i class="fa fa-file"></i></h2>
-											<p class="error-explanation text-center">Không được để trống thông tin</p>
-											<a style="text-align: center ; font-size: 30px" th:href="@{/admin/themND}">Thử lại</a>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<h4 class="text">Here are some useful links</h4>
-										<ul class="nav nav-list primary">
-											<li>
-												<a href="#"><i class="fa fa-caret-right text-dark"></i> Dashboard</a>
-											</li>
-											<li>
-												<a href="#"><i class="fa fa-caret-right text-dark"></i> User Profile</a>
-											</li>
-											<li>
-												<a href="#"><i class="fa fa-caret-right text-dark"></i> FAQ's</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</section>
-					<!-- end: page -->
-				</section>
-			</div>
-
-			<aside id="sidebar-right" class="sidebar-right">
-				<div class="nano">
-					<div class="nano-content">
-						<a href="#" class="mobile-close visible-xs">
-							Collapse <i class="fa fa-chevron-right"></i>
-						</a>
-			
-						<div class="sidebar-right-wrapper">
-			
-							<div class="sidebar-widget widget-calendar">
-								<h6>Upcoming Tasks</h6>
-								<div data-plugin-datepicker data-plugin-skin="dark" ></div>
-			
-								<ul>
-									<li>
-										<time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
-										<span>Company Meeting</span>
-									</li>
-								</ul>
-							</div>
-			
-							<div class="sidebar-widget widget-friends">
-								<h6>Friends</h6>
-								<ul>
-									<li class="status-online">
-										<figure class="profile-picture">
-											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-online">
-										<figure class="profile-picture">
-											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-offline">
-										<figure class="profile-picture">
-											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-offline">
-										<figure class="profile-picture">
-											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-								</ul>
-							</div>
-			
+						<div class="col-md-4">
+							<h4 class="text">Here are some useful links</h4>
+							<ul class="nav nav-list primary">
+								<li>
+									<a href="#"><i class="fa fa-caret-right text-dark"></i> Dashboard</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-caret-right text-dark"></i> User Profile</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-caret-right text-dark"></i> FAQ's</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</aside>
+			</section>
+			<!-- end: page -->
 		</section>
+	</div>
 
-		<!-- Vendor -->
-		<div th:replace="admin/layoutadmin/layoutadmin :: js"></div>
+	<aside id="sidebar-right" class="sidebar-right">
+		<div class="nano">
+			<div class="nano-content">
+				<a href="#" class="mobile-close visible-xs">
+					Collapse <i class="fa fa-chevron-right"></i>
+				</a>
 
-	</body>
+				<div class="sidebar-right-wrapper">
+
+					<div class="sidebar-widget widget-calendar">
+						<h6>Upcoming Tasks</h6>
+						<div data-plugin-datepicker data-plugin-skin="dark" ></div>
+
+						<ul>
+							<li>
+								<time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+								<span>Company Meeting</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="sidebar-widget widget-friends">
+						<h6>Friends</h6>
+						<ul>
+							<li class="status-online">
+								<figure class="profile-picture">
+									<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+								</figure>
+								<div class="profile-info">
+									<span class="name">Joseph Doe Junior</span>
+									<span class="title">Hey, how are you?</span>
+								</div>
+							</li>
+							<li class="status-online">
+								<figure class="profile-picture">
+									<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+								</figure>
+								<div class="profile-info">
+									<span class="name">Joseph Doe Junior</span>
+									<span class="title">Hey, how are you?</span>
+								</div>
+							</li>
+							<li class="status-offline">
+								<figure class="profile-picture">
+									<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+								</figure>
+								<div class="profile-info">
+									<span class="name">Joseph Doe Junior</span>
+									<span class="title">Hey, how are you?</span>
+								</div>
+							</li>
+							<li class="status-offline">
+								<figure class="profile-picture">
+									<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+								</figure>
+								<div class="profile-info">
+									<span class="name">Joseph Doe Junior</span>
+									<span class="title">Hey, how are you?</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</aside>
+</section>
+
+<!-- Vendor -->
+<div th:replace="admin/layoutadmin/layoutadmin :: js"></div>
+
+</body>
 </html>

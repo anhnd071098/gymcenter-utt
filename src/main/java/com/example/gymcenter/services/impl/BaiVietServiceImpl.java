@@ -56,7 +56,7 @@ public class BaiVietServiceImpl implements BaiVietService {
     @Override
     public String editPost(Integer id, Model model) {
         Optional<BaiViet> baiViet = baiVietRepository.findById(id);
-        baiViet.ifPresent(user -> model.addAttribute("baiViet", baiViet));
+        baiViet.ifPresent(bV -> model.addAttribute("baiViet", baiViet));
         return "admin/sua-bai-viet";
     }
 
