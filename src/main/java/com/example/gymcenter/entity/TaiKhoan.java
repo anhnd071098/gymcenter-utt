@@ -23,6 +23,7 @@ public class TaiKhoan {
 
     @Column(name = "soDienThoai")
     private String soDienThoai;
+
     @Email
     @Column(name = "email")
     private String email;
@@ -41,6 +42,9 @@ public class TaiKhoan {
 
     @Column(name = "IDAdmin")
     private Integer IDAdmin;
+
+
+
 
     public TaiKhoan() {
     }

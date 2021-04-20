@@ -1,14 +1,13 @@
 package com.example.gymcenter.services;
 
 import com.example.gymcenter.entity.TaiKhoan;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.ui.Model;
 
 public interface TaiKhoanService {
-    String save(TaiKhoan taiKhoan);
-    List<TaiKhoan> getList();
-    Optional<TaiKhoan>  findOne(Integer id);
-    void delete(Integer id);
-    List<TaiKhoan> search(String term);
+    String addAdmin(Model model);
+    String saveAdmin(TaiKhoan taiKhoan);
+    String viewAdmin(Model model);
+    String updateAdmin(Integer id, Model model);
+    String deleteAdmin(Integer id);
+    String searchTaiKhoan(String term, Model model);
 }
