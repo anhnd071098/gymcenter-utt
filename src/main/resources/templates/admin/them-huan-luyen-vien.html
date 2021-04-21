@@ -20,7 +20,7 @@
             <!-- start: page -->
             <div class="panel-body">
                 <label style="font-size: 30px; margin-bottom: 10px;">Thêm Huấn Luyện Viên</label>
-                <form th:action="@{/admin/huanluyenvien/save}" th:object="${hlv}" class="form-horizontal form-bordered" method="post">
+                <form th:action="@{/admin/huanluyenvien/save}" th:object="${hlv}" class="form-horizontal form-bordered" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="col-md-6">
                             <div class="input-group mb-md">
@@ -49,6 +49,11 @@
 															<i class="fa fa-user"></i>
 														</span>
                                 <input type="text" class="form-control" th:field="*{kinhNghiem}" placeholder="Kinh ngiệm">
+                            </div>
+
+                            <div class="input-group mb-md">
+                                <label>Tải ảnh lên</label>
+                                <input type="file" id="file" name="file" multiple="" th:field="*{hinhAnh}" />
                             </div>
                             <div class="input-group mb-md">
                                 <input type="submit" value="Lưu">

@@ -10,6 +10,9 @@ public class HuanLuyenVien {
     @Column(name = "ID", nullable = false)
     private Integer ID;
 
+    @Column(name = "IDAdmin")
+    private Integer IDAdmin;
+
     @Column(name = "tenHuanLuyenVien")
     private String tenHuanLuyenVien;
 
@@ -25,28 +28,21 @@ public class HuanLuyenVien {
     @Column(name = "tinhTrangThue")
     private Integer tinhTrangThue;
 
-    @Column(name = "IDAdmin")
-    private Integer IDAdmin;
+    @Column(name = "hinhAnh")
+    private String hinhAnh;
 
     public HuanLuyenVien() {
     }
 
-    public HuanLuyenVien(Integer ID, String tenHuanLuyenVien, Integer tuoi, String kinhNghiem, String thanhTich, Integer tinhTrangThue, Integer IDAdmin) {
+    public HuanLuyenVien(Integer ID, Integer IDAdmin, String tenHuanLuyenVien, Integer tuoi, String kinhNghiem, String thanhTich, Integer tinhTrangThue, String hinhAnh) {
         this.ID = ID;
-        this.tenHuanLuyenVien = tenHuanLuyenVien;
-        this.tuoi = tuoi;
-        this.kinhNghiem = kinhNghiem;
-        this.thanhTich = thanhTich;
-        this.tinhTrangThue = tinhTrangThue;
         this.IDAdmin = IDAdmin;
-    }
-
-    public HuanLuyenVien(String tenHuanLuyenVien, Integer tuoi, String kinhNghiem, String thanhTich, Integer tinhTrangThue) {
         this.tenHuanLuyenVien = tenHuanLuyenVien;
         this.tuoi = tuoi;
         this.kinhNghiem = kinhNghiem;
         this.thanhTich = thanhTich;
         this.tinhTrangThue = tinhTrangThue;
+        this.hinhAnh = hinhAnh;
     }
 
     public Integer getID() {
@@ -55,6 +51,14 @@ public class HuanLuyenVien {
 
     public void setID(Integer ID) {
         this.ID = ID;
+    }
+
+    public Integer getIDAdmin() {
+        return IDAdmin;
+    }
+
+    public void setIDAdmin(Integer IDAdmin) {
+        this.IDAdmin = IDAdmin;
     }
 
     public String getTenHuanLuyenVien() {
@@ -97,11 +101,11 @@ public class HuanLuyenVien {
         this.tinhTrangThue = tinhTrangThue;
     }
 
-    public Integer getIDAdmin() {
-        return IDAdmin;
+    public String getHinhAnh() {
+        return hinhAnh;
     }
 
-    public void setIDAdmin(Integer IDAdmin) {
-        this.IDAdmin = IDAdmin;
+    public void setHinhAnh(String hinhAnh) {
+        this.hinhAnh = hinhAnh;
     }
 }

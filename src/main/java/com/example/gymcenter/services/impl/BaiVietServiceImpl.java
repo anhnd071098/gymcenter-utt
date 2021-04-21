@@ -25,6 +25,7 @@ public class BaiVietServiceImpl implements BaiVietService {
     @Override
     public String savePost(BaiVietRequest baiVietRequest) {
         if (baiVietRequest!=null){
+            baiVietRequest.getHinhAnh();
             BaiViet baiViet = new BaiViet();
             baiViet.setTenBaiViet(baiVietRequest.getTenBaiViet());
             baiViet.setNoiDungBaiViet(baiVietRequest.getNoiDungBaiViet());
@@ -53,11 +54,41 @@ public class BaiVietServiceImpl implements BaiVietService {
         return "admin/xem-bai-viet";
     }
 
+    public String viewPostUser(Model model) {
+        List<BaiViet> posts = baiVietRepository.findAll();
+        if (posts.isEmpty()){
+            return "redirect:/error/404";
+        }
+        model.addAttribute("posts", posts);
+        return "user/blog";
+    }
+
+    @Override
+    public String viewOnePost(Integer id, Model model) {
+        Optional<BaiViet> baiViet = baiVietRepository.findById(id);
+        baiViet.ifPresent(baiViet1-> model.addAttribute("baiViet", baiViet.get()));
+        return "user/blog_details";
+    }
+
+    @Override
+    public String searchBlog(String term, Model model) {
+        List<BaiViet> list = baiVietRepository.findByTenBaiVietContaining(term);
+        if (!list.isEmpty()){
+            model.addAttribute("posts", list);
+            return "user/blog";
+        }
+        return "redirect:/error/404";
+    }
+
+
     @Override
     public String editPost(Integer id, Model model) {
-        Optional<BaiViet> baiViet = baiVietRepository.findById(id);
-        baiViet.ifPresent(bV -> model.addAttribute("baiViet", baiViet));
-        return "admin/sua-bai-viet";
+        BaiViet baiViet = baiVietRepository.findByID(id);
+        if(baiViet!=null) {
+            model.addAttribute("baiViet", baiViet);
+            return "admin/sua-bai-viet";
+        }
+        return "redirect:/error/404";
     }
 
     @Override

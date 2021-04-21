@@ -11,4 +11,12 @@ public class ErrorController {
     public String error404(){
         return "admin/pages-404";
     }
+    @GetMapping("/lienhe")
+    public String errorContact(){
+        return "user/error/pages-404-lienhe";
+    }
+    @GetMapping("/huanluyenvien")
+    public String errorHLV(){
+        return "user/error/pages-404";
+    }
 }
