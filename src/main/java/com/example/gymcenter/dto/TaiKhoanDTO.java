@@ -1,11 +1,10 @@
-package com.example.gymcenter.request;
+package com.example.gymcenter.dto;
 
-public class TaiKhoanUser {
+public class TaiKhoanDTO {
     private Integer ID;
     private String name;
     private String email;
     private String password;
-    private String confirmPassword;
 
     public Integer getID() {
         return ID;
@@ -39,11 +38,4 @@ public class TaiKhoanUser {
         this.password = password;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
 }

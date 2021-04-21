@@ -48,15 +48,15 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
     }
 
     @Override
-    public String updateAdmin(Integer id, Model model) {
-        TaiKhoan taiKhoan = taiKhoanRepository.findByID(id);
+    public String updateAdmin(Long id, Model model) {
+        TaiKhoan taiKhoan = taiKhoanRepository.findById(id);
         model.addAttribute("taiKhoan1", taiKhoan);
         return "admin/sua-nguoi-dung";
     }
 
     @Override
-    public String deleteAdmin(Integer id) {
-        TaiKhoan taiKhoan = taiKhoanRepository.findByID(id);
+    public String deleteAdmin(Long id) {
+        TaiKhoan taiKhoan = taiKhoanRepository.findById(id);
         if (taiKhoan != null) {
             taiKhoanRepository.delete(taiKhoan);
             return "redirect:/admin/view";

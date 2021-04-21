@@ -5,8 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-    @GetMapping("/trangchu")
+    @GetMapping(value = {"/trangchu", "/"})
     public String home() {
         return "user/index";
+    }
+    @GetMapping("/login")
+    public String dangNhap() {
+        return "user/dang-nhap";
     }
 }

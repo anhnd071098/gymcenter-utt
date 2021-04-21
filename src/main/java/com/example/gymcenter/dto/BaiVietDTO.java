@@ -1,10 +1,10 @@
-package com.example.gymcenter.request;
+package com.example.gymcenter.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotNull;
 
-public class BaiVietRequest {
+public class BaiVietDTO {
     private Integer ID;
 
     @NotNull

@@ -3,6 +3,7 @@ package com.example.gymcenter.controller.admin;
 import com.example.gymcenter.entity.TaiKhoan;
 import com.example.gymcenter.services.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,13 +29,13 @@ public class AdminController {
     }
 
     @GetMapping("/edit/{id}")
-    public String update(@PathVariable("id") Integer id, Model model) {
+    public String update(@PathVariable("id") Long id, Model model) {
         return taiKhoanService.updateAdmin(id, model);
 
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Integer id) {
+    public String delete(@PathVariable("id") Long id) {
         return taiKhoanService.deleteAdmin(id);
     }
 

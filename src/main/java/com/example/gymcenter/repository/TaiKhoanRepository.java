@@ -10,7 +10,8 @@ import java.util.List;
 public interface TaiKhoanRepository extends JpaRepository<TaiKhoan, Integer> {
     List<TaiKhoan> findByTenNguoiDungContaining(String term);
 
-    TaiKhoan findByID(Integer id);
+    TaiKhoan findById(Long id);
 
     TaiKhoan findByTenNguoiDung(String userName);
+    TaiKhoan findByEmail(String email);
 }

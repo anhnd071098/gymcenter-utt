@@ -2,15 +2,16 @@ package com.example.gymcenter.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name = "TaiKhoan")
+@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class TaiKhoan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private Integer ID;
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
 
     @Column(name = "tenNguoiDung")
     private String tenNguoiDung;
@@ -43,45 +44,55 @@ public class TaiKhoan {
     @Column(name = "IDAdmin")
     private Integer IDAdmin;
 
+    @Column(name = "active")
+    private Boolean active;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<PhanQuyen> phanQuyens;
 
 
     public TaiKhoan() {
     }
 
-    public TaiKhoan(Integer ID, String tenNguoiDung, Integer tuoi, String diaChi, String soDienThoai, String email, String matKhau, Date ngayCapNhat, Integer trangThaiThanhToan, Integer trangThaiThue, Integer IDAdmin) {
-        this.ID = ID;
+
+    public TaiKhoan(String tenNguoiDung,String email, Boolean active, String matKhau, Collection<PhanQuyen> phanQuyens) {
         this.tenNguoiDung = tenNguoiDung;
-        this.tuoi = tuoi;
-        this.diaChi = diaChi;
-        this.soDienThoai = soDienThoai;
+        this.active = active;
         this.email = email;
         this.matKhau = matKhau;
-        this.ngayCapNhat = ngayCapNhat;
-        this.trangThaiThanhToan = trangThaiThanhToan;
-        this.trangThaiThue = trangThaiThue;
-        this.IDAdmin = IDAdmin;
+        this.phanQuyens = phanQuyens;
+
     }
 
-    public TaiKhoan(String tenNguoiDung, Integer tuoi, String diaChi, String soDienThoai, String email) {
-        this.tenNguoiDung = tenNguoiDung;
-        this.tuoi = tuoi;
-        this.diaChi = diaChi;
-        this.soDienThoai = soDienThoai;
-        this.email = email;
+
+    public Boolean getActive() {
+        return active;
     }
 
-    public TaiKhoan(String email, String matKhau) {
-        this.email = email;
-        this.matKhau = matKhau;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
-    public Integer getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Collection<PhanQuyen> getPhanQuyens() {
+        return phanQuyens;
+    }
+
+    public void setPhanQuyens(Collection<PhanQuyen> phanQuyens) {
+        this.phanQuyens = phanQuyens;
     }
 
     public String getTenNguoiDung() {

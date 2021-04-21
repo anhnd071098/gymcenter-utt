@@ -1,13 +1,10 @@
 package com.example.gymcenter.services;
 
-import com.example.gymcenter.entity.BaiViet;
-import com.example.gymcenter.request.BaiVietRequest;
+import com.example.gymcenter.dto.BaiVietDTO;
 import org.springframework.ui.Model;
 
-import java.util.List;
-
 public interface BaiVietService {
-    String savePost(BaiVietRequest baiVietRequest);
+    String savePost(BaiVietDTO baiVietDTO);
 
     String addPost(Model model);
 
@@ -15,7 +12,7 @@ public interface BaiVietService {
 
     String editPost(Integer id, Model model);
 
-    String savePostEdit(BaiVietRequest baiVietRequest);
+    String savePostEdit(BaiVietDTO baiVietDTO);
 
     String deletePost(int id);
 

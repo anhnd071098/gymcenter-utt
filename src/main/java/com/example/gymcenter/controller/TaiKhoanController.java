@@ -1,6 +1,6 @@
 package com.example.gymcenter.controller;
 
-import com.example.gymcenter.request.TaiKhoanUser;
+import com.example.gymcenter.dto.TaiKhoanDTO;
 import com.example.gymcenter.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/registration")
 public class TaiKhoanController {
+
+    @ModelAttribute("user")
+    public TaiKhoanDTO taiKhoanDto() {
+        return new TaiKhoanDTO();
+    }
     @Autowired
     private UserService userService;
-    @GetMapping("/dangnhap")
-    public String dangNhap() {
-        return "user/dang-nhap";
-    }
 
-    @PostMapping("/saveUser")
-    public String saveUser(@Valid @ModelAttribute("user")TaiKhoanUser taiKhoanUser ){
-        return userService.saveUser(taiKhoanUser);
+    @PostMapping
+    public String saveUser(@Valid @ModelAttribute("user") TaiKhoanDTO taiKhoanDTO){
+        return userService.saveUser(taiKhoanDTO);
     }
-
-    @GetMapping("/taoTK")
+    @GetMapping
     public String taoTK(Model model) {
         return userService.showCreateUser(model);
     }
