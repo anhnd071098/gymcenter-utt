@@ -8,11 +8,11 @@ public class TaiKhoanController {
 
     @GetMapping("/dangnhap")
     public String dangnhap() {
-        return "admin/dang-nhap";
+        return "user/dang-nhap";
     }
 
     @GetMapping("/taoTK")
     public String taoTK() {
-        return "admin/tao-tai-khoan";
+        return "user/tao-tai-khoan";
     }
 }

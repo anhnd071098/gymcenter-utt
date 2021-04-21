@@ -1,6 +1,7 @@
 package com.example.gymcenter.entity;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -17,10 +18,11 @@ public class BaiViet {
     @Column(name = "hinhAnh")
     private String hinhAnh;
 
-    @Column(name = "tomtat")
+    @Column(name = "tomtat",columnDefinition="text")
+
     private String tomtat;
 
-    @Column(name = "noiDungBaiViet")
+    @Column(name = "noiDungBaiViet",columnDefinition="text")
     private String noiDungBaiViet;
 
     @Column(name = "ngayTao")
@@ -117,5 +119,49 @@ public class BaiViet {
 
     public void setIDAdmin(Integer IDAdmin) {
         this.IDAdmin = IDAdmin;
+    }
+
+    public int getDayCustom(){
+        ngayTao = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(ngayTao);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return day;
+    }
+
+    public String getMonthCustom(){
+        ngayTao = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(ngayTao);
+        int monthNumber= cal.get(Calendar.MONTH);
+        String monthString="";
+        switch (monthNumber)
+        {
+            case 0: monthString="January";
+            break;
+            case 1: monthString="February";
+                break;
+            case 2: monthString="March";
+                break;
+            case 3: monthString="April";
+                break;
+            case 4: monthString="May";
+                break;
+            case 5: monthString="June";
+                break;
+            case 6: monthString="July";
+                break;
+            case 7: monthString="August";
+                break;
+            case 8: monthString="September";
+                break;
+            case 9: monthString="October";
+                break;
+            case 10: monthString="November";
+                break;
+            case 11: monthString="December";
+                break;
+        }
+        return monthString;
     }
 }

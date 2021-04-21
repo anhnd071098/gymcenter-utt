@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                                <a th:href="@{/admin/themBV}"><button id="addToTable"  class="btn btn-primary">Thêm Bài Viết <i class="fa fa-plus"></i></button></a>
                             </div>
                         </div>
                     </div>
@@ -41,14 +41,21 @@
                                 <div class="dataTables_length" id="datatable-editable_length"></div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div id="datatable-editable_filter" class="dataTables_filter"><label><input
-                                        type="search" class="form-control" placeholder="Search"
-                                        aria-controls="datatable-editable"></label></div>
+                                <div id="datatable-editable_filter" class="dataTables_filter">
+                                    <label>
+                                        <form th:action="@{/admin/searchInfo}" method="get">
+                                            <input class="form-control mr-sm-2" type="search" name="term" placeholder="Search" />
+                                            <button class="form-control" type="submit">
+                                                <i class="fa fa-search"></i> Search
+                                            </button>
+                                        </form>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped mb-none dataTable no-footer"
-                                   id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                                   id="datatable-editable" role="grid" aria-describedby="datatable-editable_info" style="table-layout: fixed">
                                 <thead>
                                 <tr role="row">
                                     <th style="width: 30px;">ID</th>
@@ -66,7 +73,9 @@
                                 <tr th:each="post,iterStat : ${posts} " class="gradeA odd" role="row">
                                     <th style="width: 30px;" scope="row" th:text="${iterStat.count}"></th>
                                     <td style="width: 150px;" th:text="${post.tenBaiViet}"></td>
-                                    <td style="width: 30px;" th:text="${post.noiDungBaiViet}"></td>
+                                    <td style="width: 30px; overflow: hidden;text-overflow: ellipsis;">
+                                        <span style="max-height: 500px" th:text="${post.noiDungBaiViet}"> </span>
+                                    </td>
                                     <td style="width: 150px;" th:text="${post.tomtat}"></td>
                                     <td style="width: 150px;" th:text="${post.ngayTao}"></td>
                                     <td style="width: 30px;"><img th:src="@{'/post/'+ ${post.hinhAnh}}" width="50px" height="50px"  alt="" src=""/></td>

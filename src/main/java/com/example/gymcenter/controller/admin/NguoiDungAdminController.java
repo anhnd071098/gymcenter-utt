@@ -51,8 +51,9 @@ public class NguoiDungAdminController {
         if (StringUtils.isEmpty(term)) {
             return "redirect:/xemND";
         }
-        else
-            model.addAttribute("taiKhoan",taiKhoanService.search(term));
-        return "admin/xemND";
+        else {
+            model.addAttribute("taiKhoan", taiKhoanService.search(term));
+            return "admin/xemND";
+        }
     }
 }

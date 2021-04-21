@@ -4,6 +4,7 @@ import com.example.gymcenter.entity.BaiViet;
 import com.example.gymcenter.request.BaiVietRequest;
 import org.springframework.ui.Model;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface BaiVietService {
@@ -20,4 +21,10 @@ public interface BaiVietService {
     String deletePost(int id);
 
     String findBV(String term, Model model);
+
+    String viewPostUser(Model model);
+
+    String viewOnePost(Integer id,Model model);
+
+    String searchBlog(String term,Model model);
 }
