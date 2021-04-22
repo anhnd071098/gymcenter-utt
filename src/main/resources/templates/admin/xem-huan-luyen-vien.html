@@ -59,13 +59,12 @@
                                 <thead>
                                 <tr role="row">
                                     <th style="width: 30px;">ID</th>
-                                    <th style="width: 150px;">Tên huấn luyện viên</th>
+                                    <th style="width: 100px;">Tên huấn luyện viên</th>
                                     <th style="width: 30px;">Tuổi</th>
-                                    <th style="width: 150px;">Kinh Nghiệm</th>
-                                    <th style="width: 150px;">Thành Tích</th>
-                                    <th style="width: 30px;">TT Thuê</th>
-
-
+                                    <th style="width: 70px;">Kinh Nghiệm</th>
+                                    <th style="width: 120px;">Thành Tích</th>
+                                    <th style="width: 150px;">Hình Ảnh</th>
+                                    <th style="width: 20px;">TT Thuê</th>
                                     <th aria-label="Actions" style="width: 98px;">Actions</th>
                                 </tr>
                                 </thead>
@@ -76,8 +75,8 @@
                                     <td th:text="${hLV.tuoi}" style="width: 30px;"></td>
                                     <td th:text="${hLV.kinhNghiem}" style="width: 150px;"></td>
                                     <td th:text="${hLV.thanhTich}" style="width: 60px;"></td>
+                                    <td style="width: 30px;"><img th:src="@{'/post/'+ ${hLV.hinhAnh}}" width="50px" height="50px"  alt="" src=""/></td>
                                     <td th:text="${hLV.tinhTrangThue}" style="width: 30px;"></td>
-
                                     <td class="actions">
                                         <!--<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>-->
                                         <!--<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>-->

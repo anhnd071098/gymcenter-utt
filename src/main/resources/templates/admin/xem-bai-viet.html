@@ -55,7 +55,7 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped mb-none dataTable no-footer"
-                                   id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                                   id="datatable-editable" role="grid" aria-describedby="datatable-editable_info" style="table-layout: fixed">
                                 <thead>
                                 <tr role="row">
                                     <th style="width: 30px;">ID</th>
@@ -73,7 +73,9 @@
                                 <tr th:each="post,iterStat : ${posts} " class="gradeA odd" role="row">
                                     <th style="width: 30px;" scope="row" th:text="${iterStat.count}"></th>
                                     <td style="width: 150px;" th:text="${post.tenBaiViet}"></td>
-                                    <td style="width: 30px;" th:text="${post.noiDungBaiViet}"></td>
+                                    <td style="width: 30px; overflow: hidden;text-overflow: ellipsis;">
+                                        <span style="max-height: 500px" th:text="${post.noiDungBaiViet}"> </span>
+                                    </td>
                                     <td style="width: 150px;" th:text="${post.tomtat}"></td>
                                     <td style="width: 150px;" th:text="${post.ngayTao}"></td>
                                     <td style="width: 30px;"><img th:src="@{'/post/'+ ${post.hinhAnh}}" width="50px" height="50px"  alt="" src=""/></td>

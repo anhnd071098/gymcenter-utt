@@ -45,51 +45,36 @@
             </div>
         </div>
         <div class="container-fluid ">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <div class="row" style="  background-size: 230px 435px;">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" th:each="hLV:${lHLV}">
                     <div class="box snake mb-30">
-                        <div class="gallery-img big-img"
-                             th:style="'background-image: url('+ @{img/gallery/gallery6.png} +');'"></div>
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Tên huấn luyện viên</h3>
-                                <h5>tuổi</h5>
-                                <h5>kinh nghiệm</h5>
-                                <h5>thành tích</h5>
-                            </div>
-                            <div class="overlay-content1">
-                                <a href="gallery.html"><i class="ti-plus"></i></a>
-                            </div>
+                        <div class="gallery-img big-img tryReplaceUrlImageBackground" th:data-url-bg="@{'/post/'+ ${hLV.hinhAnh}}"
+                             th:style="'background-image: url('+ @{'/post/'+ ${hLV.hinhAnh}} +')'">
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                    <div class="box snake mb-30">
-                        <div class="gallery-img big-img"
-                             th:style="'background-image: url('+ @{img/gallery/gallery4.png} +');'"></div>
                         <div class="overlay">
                             <div class="overlay-content">
-                                <h3>Tên huấn luyện viên</h3>
-                                <h5>tuổi</h5>
-                                <h5>kinh nghiệm</h5>
-                                <h5>thành tích</h5>
-                            </div>
-                            <div class="overlay-content1">
-                                <a href="gallery.html"><i class="ti-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                    <div class="box snake mb-30">
-                        <div class="gallery-img big-img"
-                             th:style="'background-image: url('+ @{img/gallery/gallery5.png} +');'"></div>
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Tên huấn luyện viên</h3>
-                                <h5>tuổi</h5>
-                                <h5>kinh nghiệm</h5>
-                                <h5>thành tích</h5>
+                                <h3 th:text="${hLV.tenHuanLuyenVien}"></h3>
+                                <div style="display: inline-flex; margin-top: 5px;">
+                                    <h5><label>Tuổi : </label></h5>
+                                    <h5>
+                                        <label th:text="${hLV.tuoi}"></label>
+                                    </h5>
+                                </div>
+                                <br>
+                                <div style="display: inline-flex">
+                                    <h5><label>Kinh Nghiệm : </label></h5>
+                                    <h5>
+                                        <label th:text="${hLV.kinhNghiem}"></label>
+                                    </h5>
+                                </div>
+                                <br>
+                                <div style="display: inline-flex">
+                                    <h5><label>Thành Tích : </label></h5>
+                                    <h5>
+                                        <label th:text="${hLV.thanhTich}"></label>
+                                    </h5>
+                                </div>
+
                             </div>
                             <div class="overlay-content1">
                                 <a href="gallery.html"><i class="ti-plus"></i></a>
@@ -114,6 +99,17 @@
 <!-- JS here -->
 
 <div th:replace="user/layout/layout::js"></div>
+
+<script>
+    document.querySelectorAll(".tryReplaceUrlImageBackground").forEach(function(image){
+        var urlImg = image.getAttribute("data-url-bg");
+        if(urlImg.indexOf(" ") == -1){
+            return;
+        }
+        urlImg = urlImg.replace(/\ /g, "%20");
+        image.style.backgroundImage = "url('" + urlImg + "')";
+    })
+</script>
 
 </body>
 </html>

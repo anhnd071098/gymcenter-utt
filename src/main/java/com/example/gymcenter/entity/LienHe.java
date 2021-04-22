@@ -16,7 +16,7 @@ public class LienHe {
     @Column(name = "soDienThoai")
     private String soDienThoai;
 
-    @Column(name = "noiDungTuVan")
+    @Column(name = "noiDungTuVan",columnDefinition="text")
     private String noiDungTuVan;
 
     public LienHe() {

@@ -1,8 +1,8 @@
 package com.example.gymcenter.services.impl;
 
-import com.example.gymcenter.dto.BaiVietDTO;
 import com.example.gymcenter.entity.BaiViet;
 import com.example.gymcenter.repository.BaiVietRepository;
+import com.example.gymcenter.request.BaiVietRequest;
 import com.example.gymcenter.services.BaiVietService;
 import com.example.gymcenter.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,11 +53,41 @@ public class BaiVietServiceImpl implements BaiVietService {
         return "admin/xem-bai-viet";
     }
 
+    public String viewPostUser(Model model) {
+        List<BaiViet> posts = baiVietRepository.findAll();
+        if (posts.isEmpty()){
+            return "redirect:/error/404";
+        }
+        model.addAttribute("posts", posts);
+        return "user/blog";
+    }
+
+    @Override
+    public String viewOnePost(Integer id, Model model) {
+        Optional<BaiViet> baiViet = baiVietRepository.findById(id);
+        baiViet.ifPresent(baiViet1-> model.addAttribute("baiViet", baiViet.get()));
+        return "user/blog_details";
+    }
+
+    @Override
+    public String searchBlog(String term, Model model) {
+        List<BaiViet> list = baiVietRepository.findByTenBaiVietContaining(term);
+        if (!list.isEmpty()){
+            model.addAttribute("posts", list);
+            return "user/blog";
+        }
+        return "redirect:/error/404";
+    }
+
+
     @Override
     public String editPost(Integer id, Model model) {
-        Optional<BaiViet> baiViet = baiVietRepository.findById(id);
-        baiViet.ifPresent(bV -> model.addAttribute("baiViet", baiViet));
-        return "admin/sua-bai-viet";
+        BaiViet baiViet = baiVietRepository.findByID(id);
+        if(baiViet!=null) {
+            model.addAttribute("baiViet", baiViet);
+            return "admin/sua-bai-viet";
+        }
+        return "redirect:/error/404";
     }
 
     @Override
