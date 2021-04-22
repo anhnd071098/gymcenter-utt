@@ -1,8 +1,9 @@
 package com.example.gymcenter.controller.admin;
 
-import com.example.gymcenter.request.BaiVietRequest;
+import com.example.gymcenter.dto.BaiVietDTO;
 import com.example.gymcenter.services.BaiVietService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,8 @@ public class BaiVietAdminController {
     }
 
     @PostMapping("/themBV")
-    public String savePost(@ModelAttribute("baiVietRequest") @Valid BaiVietRequest baiVietRequest) {
-        return baiVietService.savePost(baiVietRequest);
+    public String savePost(@ModelAttribute("baiVietRequest") @Valid BaiVietDTO baiVietDTO) {
+        return baiVietService.savePost(baiVietDTO);
     }
 
     @GetMapping("/xemBV")
@@ -43,8 +44,8 @@ public class BaiVietAdminController {
     }
 
     @PostMapping("/suaBV")
-    public String updatePost(@ModelAttribute("baiViet") BaiVietRequest baiVietRequest){
-        return baiVietService.savePostEdit(baiVietRequest);
+    public String updatePost(@ModelAttribute("baiViet") BaiVietDTO baiVietDTO){
+        return baiVietService.savePostEdit(baiVietDTO);
     }
 
     @GetMapping("/xoaBV/delete/{id}")
