@@ -1,8 +1,8 @@
 package com.example.gymcenter.services.impl;
 
+import com.example.gymcenter.dto.BaiVietDTO;
 import com.example.gymcenter.entity.BaiViet;
 import com.example.gymcenter.repository.BaiVietRepository;
-import com.example.gymcenter.request.BaiVietRequest;
 import com.example.gymcenter.services.BaiVietService;
 import com.example.gymcenter.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;

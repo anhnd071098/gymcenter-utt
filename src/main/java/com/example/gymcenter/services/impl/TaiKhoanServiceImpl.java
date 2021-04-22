@@ -1,19 +1,25 @@
 package com.example.gymcenter.services.impl;
 
+import com.example.gymcenter.entity.PhanQuyen;
 import com.example.gymcenter.entity.TaiKhoan;
 import com.example.gymcenter.repository.TaiKhoanRepository;
 import com.example.gymcenter.services.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
 public class TaiKhoanServiceImpl implements TaiKhoanService {
     @Autowired
     private TaiKhoanRepository taiKhoanRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public String addAdmin(Model model) {
@@ -31,7 +37,11 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
                 taiKhoan.getTuoi() == null)
             return "redirect:/error/404";
         else {
+            taiKhoan.setPhanQuyens(
+                    Collections.singletonList(new PhanQuyen("ADMIN")));
+            taiKhoan.setActive(true);
             taiKhoan.setIDAdmin(1);
+            taiKhoan.setMatKhau(bCryptPasswordEncoder.encode(taiKhoan.getMatKhau()));
             taiKhoanRepository.save(taiKhoan);
             return "redirect:/admin/view";
         }
@@ -49,14 +59,14 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
 
     @Override
     public String updateAdmin(Long id, Model model) {
-        TaiKhoan taiKhoan = taiKhoanRepository.findById(id);
+        TaiKhoan taiKhoan = taiKhoanRepository.findByID(id);
         model.addAttribute("taiKhoan1", taiKhoan);
         return "admin/sua-nguoi-dung";
     }
 
     @Override
     public String deleteAdmin(Long id) {
-        TaiKhoan taiKhoan = taiKhoanRepository.findById(id);
+        TaiKhoan taiKhoan = taiKhoanRepository.findByID(id);
         if (taiKhoan != null) {
             taiKhoanRepository.delete(taiKhoan);
             return "redirect:/admin/view";

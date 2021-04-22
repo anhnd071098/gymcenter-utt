@@ -11,7 +11,7 @@ public class TaiKhoan {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    private Long ID;
 
     @Column(name = "tenNguoiDung")
     private String tenNguoiDung;
@@ -79,12 +79,12 @@ public class TaiKhoan {
         this.active = active;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long id) {
+        this.ID = id;
     }
 
     public Collection<PhanQuyen> getPhanQuyens() {

@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/img/**",
             "/fonts/**",
             "/post/**",
-            "/login",
+            "/admin/**",
             "/trangchu",
             "/gioithieu",
             "/hoivien",
